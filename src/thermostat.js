@@ -4,7 +4,7 @@ class Thermostat
 {
     constructor() 
     {
-    this.max_temperature = 32;
+    this.max_temperature = 25;
     this.min_temperature = 10;
     this.temperature = 20;
     this.power_saving_mode = true;
