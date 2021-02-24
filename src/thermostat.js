@@ -7,6 +7,17 @@ class Thermostat
     this.max_temperature = 32;
     this.min_temperature = 10;
     this.temperature = 20;
+    this.power_saving_mode = true;
+    }
+
+    is_power_saving_mode() 
+    {
+      return this.power_saving_mode === true;
+    }
+
+    power_saving_mode_off() 
+    {
+      return this.power_saving_mode = false;
     }
 
     is_min_temperature() 
