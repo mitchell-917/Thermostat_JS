@@ -11,12 +11,12 @@ class Thermostat
 
     is_min_temperature() 
     {
-      return this.temperature === min_temperature;
+      return this.temperature === this.min_temperature;
     }
 
     is_max_temperature()
     {
-      return this.temperature === max_temperature;
+      return this.temperature === this.max_temperature;
     }
 
     getTemp()
@@ -26,11 +26,19 @@ class Thermostat
 
     up() 
     {
+      if(this.is_max_temperature()) 
+      {
+        return;
+      }
       this.temperature +=1;
     }
 
     down() 
     {
+      if(this.is_min_temperature()) 
+      {
+        return;
+      }
       this.temperature -=1;
     }
 }
