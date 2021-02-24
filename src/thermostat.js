@@ -1,23 +1,25 @@
+'use strict';
+
 class Thermostat 
 {
     constructor() 
     {
-    this.temprature = 20;
+    this.temperature = 20;
     }
 
     getTemp()
     {
-    return this.temprature; 
+    return this.temperature; 
     }
 
     up() 
     {
-      this.temprature +=1;
+      this.temperature +=1;
     }
 
     down() 
     {
-      this.temprature -=1;
+      this.temperature -=1;
     }
 
 
