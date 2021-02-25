@@ -47,7 +47,6 @@ class Thermostat
       return this.temperature === this.MAX_LIMIT_PSM_ON;
     }
 
-
     energyUsage()
     {
       if(this.temperature < 18)
@@ -57,6 +56,10 @@ class Thermostat
       if(this.temperature >= 18 && this.temperature <= 25)
       {
         return ('Medium-usage');
+      }
+      if(this.temperature > 25)
+      {
+        return ('High-usage');
       }
     }
 
@@ -73,7 +76,6 @@ class Thermostat
       }
       this.temperature +=1;
     }
-
 
     down() 
     {

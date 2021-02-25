@@ -115,5 +115,18 @@
         expect(thermostat.energyUsage()).toEqual('Medium-usage');
       });
     });
+
+    describe('When evergy use is above 25 Degrees', function()
+    {
+      it('should display, High-Usage', function()
+      {
+      thermostat.power_saving_mode_off();
+      for (var i = 0; i < 21; i++) 
+      {
+        thermostat.up();
+      }
+      expect(thermostat.energyUsage()).toEqual('High-usage');
+      });
+    });
   });
 });
