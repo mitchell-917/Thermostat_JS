@@ -9,7 +9,6 @@
       thermostat = new Thermostat();
     });
 
-
     it('Starts at 20 degrees', function() 
     {
       expect(thermostat.temperature).toEqual(20);
@@ -30,7 +29,7 @@
    });
   });
 
-  describe('Check Power saving mode and turn it off', function() 
+  describe('Check Power saving mode and turn it off & on', function() 
   {
     it('Has Power Saving Mode enabled by default', function() 
     {
@@ -38,10 +37,12 @@
       expect(thermostat.is_power_saving_mode()).toEqual(true);
     });
 
-   it('Can turn off Power saving mode', function() 
+   it('Turn off Power Saving Mode and turn it back on ', function() 
     {
       thermostat.power_saving_mode_off();
       expect(thermostat.is_power_saving_mode()).toEqual(false);
+      thermostat.power_saving_mode_on();
+      expect(thermostat.is_power_saving_mode()).toEqual(true);
     });
   });
 
@@ -58,13 +59,37 @@
     });
 
   
-    it('has a maximum of 25 degrees', function() 
+    it('When Power Saving is on, Max of 25 Degrees', function() 
     {
+      thermostat.power_saving_mode_on();
       for (var i = 0; i < 21; i++) 
       {
       thermostat.up();
       }
       expect(thermostat.getTemp()).toEqual(25);
+    });
+
+    it('When Power Saving mode is off, Max of 32 Degrees', function()
+    {
+      thermostat.power_saving_mode_off();
+      for (var i = 0; i < 21; i++) 
+      {
+      thermostat.up();
+      }
+      expect(thermostat.getTemp()).toEqual(32);
+    });
+  });
+
+  describe('The Temperature can be reset to the default 20 Degrees', function()
+  {
+    it('Will reset the Temperature', function()
+    {
+      for (var i = 0; i < 21; i++) 
+      {
+      thermostat.up();
+      }
+      thermostat.resetTemperature() 
+      expect(thermostat.getTemp()).toEqual(20);
     });
   });
 });
