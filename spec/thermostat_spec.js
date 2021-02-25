@@ -92,4 +92,19 @@
       expect(thermostat.getTemp()).toEqual(20);
     });
   });
+
+  describe('Display Energy Usage Levels', function()
+  {
+    describe('When the usage is below 18 Degrees', function()
+    {
+      it('should display, Low-Usage', function()
+      {
+      for (var i = 0; i < 21; i++) 
+      {
+        thermostat.down();
+      }
+      expect(thermostat.energyUsage()).toEqual('Low-usage');
+      });
+    });
+  });
 });

@@ -46,6 +46,15 @@ class Thermostat
       return this.temperature === this.MAX_LIMIT_PSM_ON;
     }
 
+
+    energyUsage()
+    {
+      if(this.temperature <= 18)
+      {
+       return ('Low-usage');
+      }
+    }
+
     getTemp()
     {
     return this.temperature; 
@@ -59,6 +68,7 @@ class Thermostat
       }
       this.temperature +=1;
     }
+
 
     down() 
     {
