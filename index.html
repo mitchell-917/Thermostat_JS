@@ -5,20 +5,41 @@
   <title>Thermostat</title>
 </head>
 <script src="src/thermostat.js"></script>
+
+<script src="node_modules/jquery/dist/jquery.js"> </script>
+<script> 
+$(document).ready(function()
+{
+  $('#power-saving-status').hide(500).show(1000);
+
+  $('#temperature-up').css({
+    color: 'green', 
+    fontWeight: 'bold',
+    display: 'inline'
+  });
+
+    $('#temperature-down').css({
+    color: 'red',
+    fontWeight: 'bold',
+    display: 'inline'
+  });
+
+});
+
+
+</script>
 <body>
-  <center>
   <section>
     <h1 id="temperature"></h1>
     <p>
       Power Saving Mode: <span id="power-saving-status">On</span> </br>
       <button id="temperature-up">+</button> </br>
       <button id="temperature-down">-</button> </br>
-      <button id="temperature-reset">reset</button> </br>
+      <button id="temperature-reset">Reset</button> </br>
       <button id="powersaving-on">PSM on</button> </br>
       <button id="powersaving-off">PSM off</button> </br>
     </p>
   </section>
-  </center>
 </body>
 
 </html>
