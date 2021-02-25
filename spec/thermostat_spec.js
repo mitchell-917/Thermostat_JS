@@ -88,7 +88,7 @@
       {
       thermostat.up();
       }
-      thermostat.resetTemperature() 
+      thermostat.resetTemperature();
       expect(thermostat.getTemp()).toEqual(20);
     });
   });
@@ -104,6 +104,15 @@
         thermostat.down();
       }
       expect(thermostat.energyUsage()).toEqual('Low-usage');
+      });
+    });
+
+    describe('When energy usage is from 18 - 25 Degrees', function()
+    {
+      it('should display, Medium-Usage', function()
+      {
+        thermostat.resetTemperature()
+        expect(thermostat.energyUsage()).toEqual('Medium-usage');
       });
     });
   });
