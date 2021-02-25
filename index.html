@@ -4,9 +4,11 @@
 <head>
   <title>Thermostat</title>
 </head>
-<script src="src/thermostat.js"></script>
-
 <script src="node_modules/jquery/dist/jquery.js"> </script>
+<script src="src/thermostat.js"></script>
+<script src="src/interface.js"></script>
+<link rel="stylesheet" href="styles.css">
+
 <script> 
 $(document).ready(function()
 {
@@ -32,7 +34,7 @@ $(document).ready(function()
   <section>
     <h1 id="temperature"></h1>
     <p>
-      Power Saving Mode: <span id="power-saving-status">On</span> </br>
+      Power Saving Mode: <span id="power-saving">On </span> </br>
       <button id="temperature-up">+</button> </br>
       <button id="temperature-down">-</button> </br>
       <button id="temperature-reset">Reset</button> </br>
